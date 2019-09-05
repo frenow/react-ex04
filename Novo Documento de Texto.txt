@@ -1,0 +1,33 @@
+-api
+ -iphone.png
+ 
+-components
+-views
+-actions
+ -ac1.js
+ -ac2.js
+
+-reducers
+ -re1.js
+ -re2.js
+ -index.js
+
+-assets
+ -images
+
+-store
+ index.js
+
+componente de produto (listagem)
+componente de tela
+componente item de carrinho de compra
+
+..../products/:id
+detalhe produto
+
+
+
+
+/
+/product/:id
+/cart
