@@ -31,3 +31,10 @@ detalhe produto
 /
 /product/:id
 /cart
+
+
+src={require(`../assets/images/$/${nome}`)}
+
+
+css-tricks
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/

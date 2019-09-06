@@ -1,15 +1,22 @@
-import React from 'react';
-import { Item } from './item';
+import React, { useState, useEffect } from "react";
+import { Item } from './Item';
+import { Products } from '../api/Products';
 
-export function home() {
+export function Home() {
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    Products.getProducts().then( (prod) => setProdutos(prod.items));    
+  }, []);  
+
     return(
         <>
-         <div>
             <h1>Amazing redux store</h1> 
             <div>
-            <Item />
-            </div>
-          </div>
+            {produtos.map(prod => 
+            <Item prod = {prod} />
+            )}
+            </div>            
         </>
-        );
+        );        
 }

@@ -10,10 +10,10 @@ export function App() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/product">Product</Link>
+          <Link to="/Product">Product</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link to="/Cart">Cart</Link>
         </li>
       </ul>
       <ApplicationRoutes />
