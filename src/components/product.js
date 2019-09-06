@@ -10,6 +10,7 @@ export function Product (props) {
 
     return(
     <>
+    <img src="imagem.jpg" alt="Produto" />	
     <h1>{produto.name}</h1>
     <h2>{produto.price}</h2>
     <p>{produto.description}</p>
