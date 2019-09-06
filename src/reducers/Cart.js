@@ -1,13 +1,12 @@
 const initialState = {  
-    visibilityFilter: VisibilityFilters.SHOW_ALL,   
-    products: [] 
+    product: [],
 } 
-function Cart(state = initialState, action) { 
+
+export function Cart(state = initialState, action) { 
     switch (action.type) { 
-        case 
-        SET_VISIBILITY_FILTER:        
-        return {... state, visibilityFilter: action.filter }        
+        case 'ADD_PRODUCT':        
+            return {...state, product: [...state.product, action.product] }        
         default:            
-        return state   
+            return state   
     } 
 }

@@ -1,3 +1,3 @@
-export { Product } from "./Product";
-export { Cart } from "./Cart";
-export { Home } from "./Home";
+export { Product } from "./product";
+export { Carrinho } from "./carrinho";
+export { Home } from "./home";

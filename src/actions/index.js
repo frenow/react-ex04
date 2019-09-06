@@ -1,13 +1,13 @@
 export function addProduct(product) { 
     return {    
-        type: ADD_PRODUCT,     
+        type: 'ADD_PRODUCT',     
         product   
     } 
 }
 
 export function removeProduct(product) { 
     return {    
-        type: ADD_PRODUCT,     
+        type: 'REMOVE_PRODUCT',     
         product   
     } 
 }
