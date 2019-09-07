@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Products } from '../api/Products';
 import { addProduct } from '../actions'; 
 import { connect } from 'react-redux';
+import { ADD_PRODUCT } from '../actions/actionTypes';
 
-export function Product (props) {
+function Product (props) {
     const [produto, setProduto] = useState([]);
     
     useEffect(() => {
@@ -11,8 +12,9 @@ export function Product (props) {
       }, []);    
 
     function addProduct(produto) {
-        console.log('add product');    
-        return { type: 'ADD_PRODUCT', produto }
+        console.log('add product '+produto.name);    
+        props.addProduct(produto);
+        return { type: ADD_PRODUCT, produto }
     }
 
     return(
@@ -21,9 +23,21 @@ export function Product (props) {
     <h1>{produto.name}</h1>
     <h2>{produto.price}</h2>
     <p>{produto.description}</p>
-    <button onClick={addProduct}>Add to cart</button>
+    <button onClick={() => addProduct(produto)}>Add to cart</button>
     </>
     );
 }
-const mapStateToProps = ({ produto }) => ({ product: produto });
-export default connect(mapStateToProps, { addProduct })(Product);
+const mapStateToProps = store => ({
+    product: store.product
+  });
+  
+ // const mapDispatchToProps = dispatch =>
+ //   bindActionCreators({ addProduct }, dispatch);
+  
+ const mapDispatchToProps= (dispatch)=>{
+    
+    return{
+        addProduct: (produto)=>{dispatch(addProduct(produto))}
+    }
+}
+  export default connect(mapStateToProps, mapDispatchToProps)(Product);

@@ -1,32 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux';
+import { removeProduct } from '../actions';
+import { REMOVE_PRODUCT } from '../actions/actionTypes';
 
-//function removeProduct(produto) {
-//    return { type: 'REMOVE_PRODUCT', produto }
-//}
+function Carrinho(props) {
+  const [produto, setProduto] = useState(props.product);
 
-export function Carrinho (props) {
-//    const { produto } = props;
+  const product = props.product;
+  console.log(...product);
 
-    return(    
+  useEffect(() => {
+    setProduto(props.product);    
+  }, [props]);    
+
+    function removeProduct(prod) {
+      console.log('remove product '+prod.name);    
+      props.removeProduct(prod);
+      return { type: REMOVE_PRODUCT, prod }
+      }
+  
+    return(
     <><h1>Carrinho</h1>
             <div>
             <ul>    
-            {produto.map(prod => <li>prod.name</li>
+            {produto.map(prod => <li><h3>{prod.name}</h3> Preço: {prod.price} <span><button onClick={() => removeProduct(prod)}>Remove to cart</button></span></li>
             )}
             </ul>
-            </div>  
-    <button>Remove to cart</button>
-    
+            </div>
     </>
     );
-}
-//<button onClick={removeProduct}>Remove to cart</button>
-
-const mapStateToProps = store => ({
-    produto: store.product
+  }
+  const mapStateToProps = store => ({
+    product: store.product
   });
 
-export default connect(mapStateToProps)(Carrinho);
-
-
+const mapDispatchToProps= (dispatch)=>{
+    
+  return{
+      removeProduct: (produto)=>{dispatch(removeProduct(produto))}
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Carrinho);

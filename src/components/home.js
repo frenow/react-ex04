@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Item } from './item';
 import { Products } from '../api/Products';
 
-export function Home() {
+export default function Home() {
   const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {

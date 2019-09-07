@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ApplicationRoutes } from "./ApplicationRoutes";
-import { Provider } from "react-redux";
-import { Store } from "./store";
+import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
+import { Store } from './store';
 
-export function App() {
+class App extends React.Component {
+  render(){
+    const {product} = this.props;
+    console.log(...product);
   return (
-    <Provider store={Store}> 
+    <Provider store={Store}>
     <div>
       <ul>
         <li>
@@ -23,4 +27,9 @@ export function App() {
     </div>
     </Provider>
   );
+  }
 }
+const mapStateToProps = store => ({
+  product: store.product
+});
+export default connect(mapStateToProps)(App);
