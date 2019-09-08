@@ -19,11 +19,55 @@ function Product (props) {
 //{require(`../assets/images/${produto.image}`)}
     return(
     <>
-    <img src='xxx.jpg' alt="Produto" />
+    <div className='row'>         
+    <a className='card'>
+    {produto.image && (
+          <img
+            src={require(`../assets/images/${produto.image}`)}
+            alt="Produto"
+          />
+        )}
     <h1>{produto.name}</h1>
-    <h2>{produto.price}</h2>
+    <h2>${produto.price}</h2>
     <p>{produto.description}</p>
     <button onClick={() => addProduct(produto)}>Add to cart</button>
+    </a>
+    </div>
+    <style jsx>{`
+      h1 { text-align: center; }
+      button {
+        background-color: #555555;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      }
+      .row {
+        max-width: 680px;
+        margin: 40px auto 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .card {
+        padding: 18px 18px 24px;
+        width: 640px;
+        text-align: left;
+        text-decoration: none;
+        color: #434343;
+        border: 1px solid #9b9b9b;
+      }
+      .card:hover {
+        border-color: #067df7;
+      }
+    `}</style>  
+
     </>
     );
 }

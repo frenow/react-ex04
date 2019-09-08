@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
-export const Item = ({prod}) => (
+export default ({prod}) => (
    <>
          <div className='row'>         
          <a className='card'>
