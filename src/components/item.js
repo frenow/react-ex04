@@ -5,9 +5,9 @@ export const Item = ({prod}) => (
    <>
          <div className='row'>         
          <a className='card'>
-         <img src="imagem.jpg" alt="Produto" />	
+         <img src={require(`../assets/images/${prod.image}`)} alt="Produto" />	
          <h2>{prod.name}</h2>
-         <p>{prod.price}</p> 
+         <p>${prod.price}</p> 
          <Link to={'/product/'+prod.id}>Detalhe</Link>
          </a>           
          </div>

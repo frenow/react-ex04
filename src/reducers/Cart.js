@@ -16,8 +16,8 @@ export function Cart(state = initialState, action) {
             case REMOVE_PRODUCT: 
             console.log('passou no reducers remove');       
             return {
-                ...state, 
-                product: [action.produtc, ...state.product] 
+                ...state,
+                product: state.product.filter(prod => prod !== action.product)
             }        
         default:            
             return state;

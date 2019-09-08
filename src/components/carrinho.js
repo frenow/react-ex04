@@ -11,7 +11,7 @@ function Carrinho(props) {
 
   useEffect(() => {
     setProduto(props.product);    
-  }, [props]);    
+  }, [props.product]);    
 
     function removeProduct(prod) {
       console.log('remove product '+prod.name);    

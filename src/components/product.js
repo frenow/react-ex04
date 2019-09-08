@@ -6,9 +6,9 @@ import { ADD_PRODUCT } from '../actions/actionTypes';
 
 function Product (props) {
     const [produto, setProduto] = useState([]);
-    
+
     useEffect(() => {
-        Products.getProductById(props.match.params.id).then( (prod) => setProduto(prod));    
+        Products.getProductById(props.match.params.id).then( (prod) => setProduto(prod));
       }, []);    
 
     function addProduct(produto) {
@@ -16,10 +16,10 @@ function Product (props) {
         props.addProduct(produto);
         return { type: ADD_PRODUCT, produto }
     }
-
+//{require(`../assets/images/${produto.image}`)}
     return(
     <>
-    <img src="imagem.jpg" alt="Produto" />	
+    <img src='xxx.jpg' alt="Produto" />
     <h1>{produto.name}</h1>
     <h2>{produto.price}</h2>
     <p>{produto.description}</p>
