@@ -4,7 +4,6 @@ import { REMOVE_PRODUCT } from '../actions/actionTypes';
 const initialState = {  
     product: [],
 }
-
 export default function Cart(state = initialState, action) { 
     switch (action.type) { 
         case ADD_PRODUCT: 
