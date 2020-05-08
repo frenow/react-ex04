@@ -1,4 +1,4 @@
-# EXEMPLO DE CARRINHO DE COMPRA USANDO REACT JS
+# EXEMPLO DE CARRINHO DE COMPRA USANDO REACT JS + REDUX
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
